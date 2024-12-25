@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="Primary">#FFFFFF</Color>
+    <Color x:Key="PrimaryDark">#1D1A22</Color>
+    <Color x:Key="Secondary">#DFD8F7</Color>
+    <Color x:Key="Tertiary">#2B0B98</Color>
+    <Color x:Key="White">White</Color>
+    <Color x:Key="Black">Black</Color>
+    <Color x:Key="AccentLight">#4F378B</Color>
+    <Color x:Key="AccentDark">#EADDFF</Color>
+    <Color x:Key="TitleLight">#1C1B1F</Color>
+    <Color x:Key="TitleDark">#E6E1E5</Color>
+    <Color x:Key="Gray200">#C8C8C8</Color>
+    <Color x:Key="Gray300">#ACACAC</Color>
+    <Color x:Key="Gray500">#6E6E6E</Color>
+    <Color x:Key="Gray600">#404040</Color>
+    <Color x:Key="Gray900">#212121</Color>
+    <Color x:Key="Gray950">#141414</Color>
+    <Color x:Key="Primarys">#1e1e1e</Color>
+    <Color x:Key="Secondarys">#252526</Color>
+    <Color x:Key="Thirdy">#2d2d30</Color>
+    <Color x:Key="Fourty">#3e3e42</Color>
+    <Color x:Key="Fivety">#0652DD</Color>
+    <Color x:Key="WhitePrimary">#efefef</Color>
+    <Color x:Key="WhiteSecondary">#d7d7d7</Color>
+    <Color x:Key="WhiteThirdy">#bfbfbf</Color>
+    <Color x:Key="WhiteFourty">#a7a7a7</Color>
+    <Color x:Key="WhiteFivety">#8f8f8f</Color>
+    <Color x:Key="Red">#EA2027</Color>
+
+</ResourceDictionary>

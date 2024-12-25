@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:dx="http://schemas.devexpress.com/maui">
+
+
+    <Style TargetType="dx:DXButton" x:Key="BtnStl">
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="HeightRequest" Value="40"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource Thirdy}, Light={StaticResource WhitePrimary}}"/>
+        <Setter Property="BorderColor" Value="{StaticResource Gray900}"/>
+        <Setter Property="PressedBorderColor" Value="{StaticResource White}"/>
+        <Setter Property="PressedBackgroundColor" Value="{StaticResource Fivety}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource Black}}"/>
+        <Setter Property="PressedTextColor" Value="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource Black}}"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="LblStl">
+        <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource Black}}"/>
+        <Setter Property="FontFamily" Value="FontBold"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style TargetType="Border" x:Key="BrdStl">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource Primarys}, Light={StaticResource WhiteFivety}}"/>
+        <Setter Property="StrokeThickness" Value="1"/>
+        <Setter Property="Stroke" Value="{AppThemeBinding Dark={StaticResource WhitePrimary}, Light={StaticResource Primarys}}"/>
+    </Style>
+    
+    <Style TargetType="Page" ApplyToDerivedTypes="True">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource Primarys}, Light={StaticResource WhiteSecondary}}" />
+    </Style>
+
+    <Style TargetType="Shell" ApplyToDerivedTypes="True">
+        <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Dark={StaticResource Primarys}, Light={StaticResource WhitePrimary}}" />
+        <Setter Property="Shell.ForegroundColor" Value="{AppThemeBinding Dark={StaticResource Primarys}, Light={StaticResource WhitePrimary}}" />
+        <Setter Property="Shell.TitleColor" Value="{dx:ThemeColor OnSurface}" />
+        <Setter Property="Shell.NavBarHasShadow" Value="False" />
+        <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Dark={StaticResource Primarys}, Light={StaticResource WhitePrimary}}" />
+        <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource Secondarys}}" />
+        <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Dark={StaticResource Fivety}, Light={StaticResource Fivety}}" />
+        <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Dark={StaticResource Red}, Light={StaticResource Red}}" />
+    </Style>
+
+</ResourceDictionary>

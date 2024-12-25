@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dx="http://schemas.devexpress.com/maui"
+             xmlns:dxg="clr-namespace:DevExpress.Android.Charts;assembly=DXCharts.a"
+             xmlns:data="clr-namespace:Celerate.Services.DataService"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="true"
+             x:Class="Celerate.Views.ChartsPage">
+
+    <Grid RowDefinitions="*">
+        <dx:DXScrollView Orientation="Vertical">
+            <dx:DXStackLayout Orientation="Vertical" ItemSpacing="5">
+                
+                <dx:DXScrollView Orientation="Horizontal">
+                    <dx:DXStackLayout Orientation="Horizontal" ItemSpacing="10" Margin="5,5,5,0">
+                        <dx:DXButton Style="{StaticResource BtnStl}" Content="Bugün"></dx:DXButton>
+                        <dx:DXButton Style="{StaticResource BtnStl}" Content="Haftalık"></dx:DXButton>
+                        <dx:DXButton Style="{StaticResource BtnStl}" Content="Aylık"></dx:DXButton>
+                        <dx:DXButton Style="{StaticResource BtnStl}" Content="Yıllık"></dx:DXButton>
+                        <dx:DXButton Style="{StaticResource BtnStl}" Content="Özel"></dx:DXButton>
+                    </dx:DXStackLayout>
+                </dx:DXScrollView>
+                
+                <Border Style="{StaticResource BrdStl}" HeightRequest="300">
+                    <Grid RowDefinitions="25,*,25" Margin="10">
+                        <Label Grid.Row="0" Style="{StaticResource LblStl}" Text="Bugünkü Satışlarda En Popüler Ürünler ↓"></Label>
+
+                        <dx:PieChartView x:Name="chart" Grid.Row="1" SelectionBehavior="Explode">
+                            <dx:PieChartView.Series> 
+                                <dx:DonutSeries>
+                                    <dx:DonutSeries.Data>
+                                        <dx:PieSeriesDataAdapter DataSource="{Binding ChartItems}" LabelDataMember="Text" ValueDataMember="Value"/>
+                                    </dx:DonutSeries.Data>
+                                    <dx:DonutSeries.Label>
+                                        <dx:PieSeriesLabel Position="Inside" TextPattern="{}{VP}%" Indent="50"></dx:PieSeriesLabel>
+                                    </dx:DonutSeries.Label>
+                                </dx:DonutSeries>
+                            </dx:PieChartView.Series>
+
+                            <dx:PieChartView.Hint>
+                                <dx:PieHint Enabled="True"/>
+                            </dx:PieChartView.Hint>
+                        </dx:PieChartView>
+
+                        <Label Grid.Row="2" HorizontalOptions="Center" Style="{StaticResource LblStl}" Text="Kıymalı Kol Böreği %41"></Label>
+                    </Grid>
+                </Border>
+                
+                <Border Style="{StaticResource BrdStl}" HeightRequest="200">
+                    <Grid RowDefinitions="25,*,25" Margin="3">
+                        <Label Grid.Row="0" Style="{StaticResource LblStl}" Text="Toplam Satış ↓"></Label>
+
+                        <dx:RadialGauge Grid.Row="1">
+                            <dx:RadialScale Thickness="10" MajorTickmarkCount="10" MinorTickmarkCount="5" ShowFirstTickmark="True" ShowLastTickmark="True" EndValue="{Binding MaxSales}" StartAngle="180" SweepAngle="180">
+                                <dx:RangeIndicator EndValue="{Binding TotalSales}" StartThickness="10" EndThickness="10" />
+                                <dx:NeedleIndicator Size="50" Value="{Binding TotalSales}" AllowAnimation="True" AnimationDuration="0:0:1">
+                                    <dx:NeedleIndicator.AnimationEasing>
+                                        <dx:BackEasingFunction EasingMode="In"/>
+                                    </dx:NeedleIndicator.AnimationEasing>
+                                </dx:NeedleIndicator>
+                            </dx:RadialScale>
+                        </dx:RadialGauge>
+
+                        <Label FontSize="13" Grid.Row="2" Style="{StaticResource LblStl}" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold">
+                            <Label.Text>
+                                <MultiBinding StringFormat="Toplam: ₺{0:N}">
+                                    <Binding Path="TotalSales" />
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
+                    </Grid>
+                </Border>
+
+            </dx:DXStackLayout>
+        </dx:DXScrollView>
+    </Grid>
+</ContentPage>
